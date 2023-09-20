@@ -6,8 +6,6 @@ function updateChart() {
         const response = await fetch(url);
         const datapoints = await response.json();
 
-        console.log(datapoints);
-
         return datapoints;
     }
 
