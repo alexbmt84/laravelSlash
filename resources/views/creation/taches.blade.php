@@ -53,7 +53,7 @@
 
                             <input type="text" id="nomTache" name="nom_tache" placeholder="Nom de la tache" />
 
-                            <div class="title bleu">Début prévu : <input type="datetime-local" name="dateDebut" id="dateDebut" value="" required></div>
+{{--                            <div class="title bleu">Début prévu : <input type="datetime-local" name="dateDebut" id="dateDebut" value="" required></div>--}}
 
                             <div class="text-center">
                                 <button class="button" type="submit">Continuer</button>

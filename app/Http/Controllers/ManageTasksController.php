@@ -39,4 +39,22 @@ class ManageTasksController extends Controller
 
     }
 
+    public function play($id) {
+
+        $tache = Tache::find($id);
+
+        if ($tache->etat == 0) {
+
+            $tache->started_at = now();
+
+        }
+
+        $tache->etat = 1;
+
+        $tache->save();
+
+        return redirect()->back();
+
+    }
+
 }

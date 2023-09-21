@@ -40,7 +40,6 @@ class AddTaskController extends Controller
 
         Tache::query()->create([
             'label' => $request['nom_tache'],
-            'date_debut' =>  $request['dateDebut'],
             'image' => $image,
             'user_id' => $userId,
             'evenement_id' => $request['select-event']

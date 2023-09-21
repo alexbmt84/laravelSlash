@@ -74,3 +74,5 @@ Route::post('/recette', [AddRevenueController::class, 'store']);
 Route::get('/job-well-done', [AddJobController::class, 'jobWellDone']);
 Route::get('/event-well-done', [AddEventController::class, 'eventWellDone']);
 Route::get('/task-well-done', [AddTaskController::class, 'taskWellDone']);
+
+Route::post('/play/{id}', [ManageTasksController::class, 'play']);

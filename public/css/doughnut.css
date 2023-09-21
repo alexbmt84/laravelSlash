@@ -556,7 +556,7 @@ h3 {
     align-items: center;
     min-width: 160px;
     width: 168px;
-    height: 360px;
+    height: 385px;
     border-radius: 10px;
     color: white;
     font-size: 1.5em;
@@ -585,12 +585,18 @@ h3 {
     color: #000000
 }
 
-  .etat-tache {
+.etat-tache {
     font-family: hp simplify;
     font-size: 0.7em;
     font-weight: bold;
     margin-bottom: 5px;
-  }
+}
+
+.stateBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
 
   .cadreMetier {
     display: flex;

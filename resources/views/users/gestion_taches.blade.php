@@ -65,13 +65,35 @@
                                 <img class="img-tache" src="../{{$tache->image}}" alt="">
                             </div>
 
-                            <p class="date-tache">{{$tache->date_debut}}</p>
+                            @if($tache->etat !== 0)
+
+                                <p class="date-tache">Status : Playing</p>
+                                <p class="date-tache">{{$tache->started_at}}</p>
+
+                            @endif
 
                             <div class="etat">
 
-                                <i class="fa-regular fa-circle-play"></i>
-                                <i class="fa-regular fa-circle-pause"></i>
-                                <i class="fa-regular fa-circle-stop"></i>
+                                <form action="/play/{{ $tache->id }}" method="POST">
+                                    @csrf
+                                    <button class="stateBtn" type="submit">
+                                        <i class="fa-regular fa-circle-play"></i>
+                                    </button>
+                                </form>
+
+                                <form action="/pause/{{ $tache->id }}" method="POST">
+                                    @csrf
+                                    <button class="stateBtn" type="submit">
+                                        <i class="fa-regular fa-circle-pause"></i>
+                                    </button>
+                                </form>
+
+                                <form action="/end/{{ $tache->id }}" method="POST">
+                                    @csrf
+                                    <button class="stateBtn" type="submit">
+                                        <i class="fa-regular fa-circle-stop"></i>
+                                    </button>
+                                </form>
 
                             </div>
 
