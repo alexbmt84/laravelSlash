@@ -15,7 +15,9 @@ class ManageTasksController extends Controller
 
         $taches = Tache::query()->with('evenement.metier')->where('user_id', $user_id)->get();
 
-        return view('users.gestion_taches', compact('taches'));
+        $evenement = [];
+
+        return view('users.gestion_taches', compact('taches', 'evenement'));
 
     }
 
@@ -23,12 +25,17 @@ class ManageTasksController extends Controller
 
         $user_id = auth()->id();
 
+        $evenement = Evenement::query()->where([
+            ['user_id', $user_id],
+            ['id', $eventId->id]
+        ])->get();
+
         $taches = Tache::query()->with('evenement.metier')->where([
             ['user_id', $user_id],
             ['evenement_id', $eventId->id]
         ])->get();
 
-        return view('users.gestion_taches', compact('taches'));
+        return view('users.gestion_taches', compact('taches', 'evenement'));
 
     }
 

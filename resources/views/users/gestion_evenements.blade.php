@@ -63,9 +63,10 @@
                             @foreach($metier->evenements as $evenement)
 
                                 <p class="recetteTitle">{{$evenement->nom_evenement}}</p>
+                                <p class="recetteTotal">Total : {{ $evenement->recettes->sum('recette') }} €</p>
 
                                 @foreach($evenement->recettes as $recette)
-                                    <p>{{$recette->recette}} €</p>
+                                    <p class="recetteAmount">{{$recette->recette}} €</p>
                                 @endforeach
 
                             @endforeach
@@ -81,9 +82,10 @@
                             @foreach($metier->evenements as $evenement)
 
                                 <p class="recetteTitle">{{$evenement->nom_evenement}}</p>
+                                <p class="recetteTotal">Total : {{ $evenement->recettes->sum('depense') }} €</p>
 
                                 @foreach($evenement->recettes as $recette)
-                                    <p>{{$recette->depense}} €</p>
+                                    <p class="recetteAmount">{{$recette->depense}} €</p>
                                 @endforeach
 
                             @endforeach

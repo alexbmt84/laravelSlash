@@ -32,9 +32,19 @@
 
                 </section>
 
-                <div class="event">
-                    <h3>Tâches du jour</h3>
-                </div>
+                @if($evenement)
+
+                    <div class="event">
+                        <h3>{{ $evenement[0]->nom_evenement }} - Tâches du jour</h3>
+                    </div>
+
+                @else
+
+                    <div class="event">
+                        <h3>Tâches du jour</h3>
+                    </div>
+
+                @endif
 
                 <div class="eventGrid">
 

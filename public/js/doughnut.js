@@ -36,6 +36,9 @@ const doughnutChart = new Chart(chartCanvas, {
 
 
     options: {
+        animation: {
+            duration: 2000,
+        },
         cutoutPercentage: 80, // The percentage of the middle cut out of the chart
         responsive: false, // Set the chart to not be responsive
         tooltips: {

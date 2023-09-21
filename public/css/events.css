@@ -537,18 +537,30 @@ select {
     font-weight: bold !important;
 }
 
+.recetteTotal {
+    margin-top: 10px;
+    font-weight: bold !important;
+    color: white !important;
+}
+
+.recetteAmount {
+    margin-top: 10px;
+}
+
 .btnEvent {
   margin-top: 10px;
   margin-bottom: 20px;
   display: block;
-  padding: 0 10px;
-  font-size: 1.4em;
+  padding: 5px 10px;
+  font-size: 1em;
+    height: 33px;
   font-weight: normal;
   text-decoration: none;
   border-radius: 8px;
   background:#fff;
-  color: #cda680;
+  color: #212121;
   transition: 0.2s;
+  font-family: 'hp simplify';
 }
 
 .btnTasks{
@@ -557,14 +569,15 @@ select {
     margin-top: 10px;
     margin-bottom: 20px;
     display: block;
-    padding: 0 10px;
-    font-size: 35px;
-    font-weight: normal;
+    padding: 15px 10px;
+    font-size: 20px;
+    font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
     background:#fff;
-    color: #cda680;
+    color: #212121;
     transition: 0.2s;
+    font-family: "hp simplify";
 }
 
 .btnEvent2 {
@@ -572,23 +585,26 @@ select {
     margin-bottom: 10px;
     display: block;
     padding: 0 10px;
-    font-size: 1.4em;
+    font-size: 1em;
     font-weight: normal;
     text-decoration: none;
     border-radius: 8px;
     background:#fff;
-    color: #cda680;
+    color: #212121;
     transition: 0.2s;
+    font-family: "hp simplify";
+}
+
+.btnTasks:hover {
+    scale: 1.1;
 }
 
 .btnEvent:hover{
  scale: 1.1;
- box-shadow: 2px 2px 4px #2d2d2d;
 }
 
 .btnEvent2:hover{
  scale: 1.1;
- box-shadow: 2px 2px 4px #2d2d2d;
 }
 
 .hevent {
