@@ -11,6 +11,10 @@ class AddJobController extends Controller
         return view('creation.metiers');
     }
 
+    public function jobWellDone() {
+        return view('welldone.jobWellDone');
+    }
+
     public function store(Request $request) {
 
         $user = auth()->user();
@@ -35,7 +39,7 @@ class AddJobController extends Controller
             'sphere_id' => $request['radio_sphere']
         ]);
 
-        return redirect()->to('/home');
+        return redirect()->to('/job-well-done');
 
     }
 

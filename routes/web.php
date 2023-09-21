@@ -43,6 +43,7 @@ Route::get('/data', [ReportingController::class, 'getData']);
 Route::get('/gestion_evenements', [ManageEventsController::class, 'index']);
 
 Route::get('/gestion_taches', [ManageTasksController::class, 'index']);
+Route::get('/gestion_taches/{eventId}', [ManageTasksController::class, 'listByEvent']);
 
 Route::get('/planification', [PlanificationController::class, 'index']);
 
@@ -69,3 +70,7 @@ Route::post('/taches', [AddTaskController::class, 'store']);
 
 Route::get('/recette', [AddRevenueController::class, 'index']);
 Route::post('/recette', [AddRevenueController::class, 'store']);
+
+Route::get('/job-well-done', [AddJobController::class, 'jobWellDone']);
+Route::get('/event-well-done', [AddEventController::class, 'eventWellDone']);
+Route::get('/task-well-done', [AddTaskController::class, 'taskWellDone']);

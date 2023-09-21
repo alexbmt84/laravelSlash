@@ -18,6 +18,10 @@ class AddTaskController extends Controller
 
     }
 
+    public function taskWellDone() {
+        return view('welldone.taskWellDone');
+    }
+
     public function store(Request $request) {
 
         $userId = auth()->id();
@@ -42,7 +46,7 @@ class AddTaskController extends Controller
             'evenement_id' => $request['select-event']
         ]);
 
-        return redirect()->to('/home');
+        return redirect()->to('/task-well-done');
 
     }
 

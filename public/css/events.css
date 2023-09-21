@@ -4,6 +4,11 @@ a {
     display:none;
 }
 
+.eventLink {
+    display: block;
+    text-decoration: none;
+}
+
 body {
   background-color: #f2eacc;
   min-height: 100%;
@@ -523,12 +528,18 @@ select {
     margin-top: 10px;
 }
 
+.itemName:hover {
+    color: white;
+}
+
 .recetteTitle {
     margin-top: 10px;
     font-weight: bold !important;
 }
 
 .btnEvent {
+  margin-top: 10px;
+  margin-bottom: 20px;
   display: block;
   padding: 0 10px;
   font-size: 1.4em;
@@ -538,6 +549,22 @@ select {
   background:#fff;
   color: #cda680;
   transition: 0.2s;
+}
+
+.btnTasks{
+    height: 55px;
+    width: 190px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: block;
+    padding: 0 10px;
+    font-size: 35px;
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 8px;
+    background:#fff;
+    color: #cda680;
+    transition: 0.2s;
 }
 
 .btnEvent2 {
@@ -565,9 +592,12 @@ select {
 }
 
 .hevent {
-margin: 50px auto 0;
-width: 75%;
-font-size: 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto 0;
+    width: 75%;
+    font-size: 2.5em;
     text-align: center;
 }
 

@@ -23,7 +23,8 @@
                 <h1>Gestion des projets </h1>
 
                 <div class="hevent">
-                    <h3>Ma liste de projets :</h3>
+                    <h3>Ma liste de projets</h3>
+                    <a class="btnTasks" href="/gestion_taches">Toutes mes tâches</a>
                 </div>
 
                 @foreach($metiers as $metier)
@@ -35,8 +36,16 @@
                                 <p class="recetteTitle">Evénements</p>
 
                                 @foreach($metier->evenements as $event)
-                                    <p class="itemName skeleton-loader">{{$event->nom_evenement}}</p>
+                                    <a class="eventLink" href="/gestion_taches/{{ $event->id  }}">
+                                        <p class="itemName skeleton-loader">{{$event->nom_evenement}}</p>
+                                    </a>
+
                                 @endforeach
+
+                                <div class="liens">
+                                    <a class="btnEvent" href="/evenements">Ajouter un événement</a>
+                                    <a class="btnEvent" href="/taches">Ajouter une tâche</a>
+                                </div>
 
                             </div>
 
@@ -44,13 +53,7 @@
                             <p class="recetteTitle">Metier</p>
                             <p class="itemName">{{$metier->nom}}</p>
                             <div class="jobimg" style= 'background-image: url("{{$metier->icone}}");'></div>
-                        </div>
-
-                        <div class="taches">
-                            <div class="liens">
-                                <a class="btnEvent" href="/taches">Ajouter une tache</a>
-                                <a class="btnEvent" href="/gestion_taches">Afficher les taches</a>
-                            </div>
+                            <a class="btnEvent" href="/metiers">Ajouter un métier</a>
                         </div>
 
                         <div class="recette">

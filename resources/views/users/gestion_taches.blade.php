@@ -9,8 +9,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <link rel="stylesheet" href="css/doughnut.css">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" defer></script><script  src="js/doughnut.js" defer></script>
+            <link rel="stylesheet" href="../css/doughnut.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" defer></script><script  src="../js/doughnut.js" defer></script>
         </head>
 
         <body>
@@ -33,7 +33,7 @@
                 </section>
 
                 <div class="event">
-                    <h3>Taches du jour</h3>
+                    <h3>Tâches du jour</h3>
                 </div>
 
                 <div class="eventGrid">
@@ -46,13 +46,13 @@
                             <p class="event-title">{{$tache->evenement->nom_evenement}}</p>
 
                             <div class="cadreMetier">
-                                <img class="img-metier" src="{{$tache->evenement->metier->icone}}" alt="">
+                                <img class="img-metier" src="../{{$tache->evenement->metier->icone}}" alt="">
                             </div>
 
                             <p class="text-tache">{{$tache->label}}</p>
 
                             <div class="cadreTache">
-                                <img class="img-tache" src="{{$tache->image}}" alt="">
+                                <img class="img-tache" src="../{{$tache->image}}" alt="">
                             </div>
 
                             <p class="date-tache">{{$tache->date_debut}}</p>

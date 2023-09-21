@@ -31,7 +31,7 @@
 
                 <section class="chart2" id="chartContainer">
                     <figure class="chart__figure2" id="chart__figure">
-                        <canvas class="chart__canvas canvas1" id="chartCanvas" width="" height="" aria-label="doughnutChart" role="img"></canvas>
+                        <canvas class="chart__canvas canvas1" id="eventsCanvas" width="" height="" aria-label="doughnutChart" role="img"></canvas>
                         <!-- <button onclick="updateChart()">Fetch now</button> -->
                     </figure>
                 </section>

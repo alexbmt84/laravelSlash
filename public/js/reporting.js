@@ -54,26 +54,26 @@ function updateChart() {
 
         });
 
-        doughnutChart.data.labels = events;
-        doughnutChart.data.datasets[0].data = dureeEvent;
+        eventsChart.data.labels = events;
+        eventsChart.data.datasets[0].data = dureeEvent;
 
-        graph.data.datasets[0].data = users;
-        graph.data.labels = metiers;
+        jobsChart.data.datasets[0].data = users;
+        jobsChart.data.labels = metiers;
 
-        graph2.data.datasets[0].data = depenses;
-        graph2.data.labels = events;
+        depensesChart.data.datasets[0].data = depenses;
+        depensesChart.data.labels = events;
 
-        graph3.data.datasets[0].data = recettes;
-        graph3.data.labels = events;
+        recettesChart.data.datasets[0].data = recettes;
+        recettesChart.data.labels = events;
 
-        graphSphere.data.datasets[0].data = sphereMetier;
-        graphSphere.data.labels = sphereLabel;
+        spheresChart.data.datasets[0].data = sphereMetier;
+        spheresChart.data.labels = sphereLabel;
 
-        doughnutChart.update();
-        graph.update();
-        graph2.update();
-        graph3.update();
-        graphSphere.update();
+        eventsChart.update();
+        jobsChart.update();
+        depensesChart.update();
+        recettesChart.update();
+        spheresChart.update();
 
     });
 
@@ -85,11 +85,11 @@ const percent = 0;
 const percentValue = percent;
 
 const color = '#212121';
-const canvas = 'chartCanvas';
+const canvas = 'eventsCanvas';
 const container = 'chartContainer';
 
 const chartFigure = document.getElementById("chart__figure");
-const chartCanvas = document.getElementById(canvas);
+const eventsCanvas = document.getElementById(canvas);
 const chartContainer = document.getElementById(container);
 
 const pPercent = document.createElement("p");
@@ -98,7 +98,7 @@ pPercent.innerText = percentValue + "%";
 
 chartFigure.appendChild(pPercent);
 
-const doughnutChart = new Chart(chartCanvas, {
+const eventsChart = new Chart(eventsCanvas, {
 
     type: "doughnut",
 
@@ -113,7 +113,7 @@ const doughnutChart = new Chart(chartCanvas, {
             backgroundColor: [
                 "#FC4A50",
                 "#2490F6",
-                "#FFDED",
+                "#ffc7c4",
                 "#2ED82E",
                 "#C39D78",
                 "#FC8823",
@@ -162,9 +162,9 @@ const doughnutChart = new Chart(chartCanvas, {
 
 });
 
-let ctx = document.querySelector("#chartCanvas2")
+let spheresCanvas = document.querySelector("#chartCanvas2")
 
-let graphSphere = new Chart(ctx, {
+let spheresChart = new Chart(spheresCanvas, {
 
     type: "pie",
 
@@ -221,9 +221,9 @@ let graphSphere = new Chart(ctx, {
     }
 });
 
-let chart = document.querySelector("#chartCanvas5");
+let jobsCanvas = document.querySelector("#chartCanvas5");
 
-let graph = new Chart(chart, {
+let jobsChart = new Chart(jobsCanvas, {
 
     type: "pie",
     data: {
@@ -278,9 +278,9 @@ let graph = new Chart(chart, {
     }
 });
 
-let ctx2 = document.querySelector("#chartCanvas3");
+let depensesCanvas = document.querySelector("#chartCanvas3");
 
-let graph2 = new Chart(ctx2, {
+let depensesChart = new Chart(depensesCanvas, {
     type: "polarArea",
     data: {
         labels: [''],
@@ -307,9 +307,9 @@ let graph2 = new Chart(ctx2, {
     }
 })
 
-let ctx3 = document.querySelector("#chartCanvas4");
+let recettesCanvas = document.querySelector("#chartCanvas4");
 
-let graph3 = new Chart(ctx3, {
+let recettesChart = new Chart(recettesCanvas, {
     type: "bar",
     data: {
         labels: [""],

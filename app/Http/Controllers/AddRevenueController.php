@@ -31,7 +31,7 @@ class AddRevenueController extends Controller
             'user_id' => $userId,
         ]);
 
-        return redirect()->to('/home');
+        return redirect()->to('/gestion_evenements');
 
     }
 

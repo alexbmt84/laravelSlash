@@ -41,10 +41,3 @@ const doughnutChart = new Chart(chartCanvas, {
         tooltips: {
             enabled: false // Hide tooltips
         } } });
-
-
-
-Chart.defaults.global.animation.duration = animationTime; // Set the animation duration
-
-divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
-chartContainer.appendChild(divElement.firstChild); // Append the divElement within the chartContainer as it's child

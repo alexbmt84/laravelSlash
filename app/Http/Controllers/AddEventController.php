@@ -17,6 +17,10 @@ class AddEventController extends Controller
 
     }
 
+    public function eventWellDone() {
+        return view('welldone.eventWellDone');
+    }
+
     public function store(Request $request) {
 
         $user = auth()->user();
@@ -31,7 +35,7 @@ class AddEventController extends Controller
             'metier_id' => $request['select-metier']
         ]);
 
-        return redirect()->to('/home');
+        return redirect()->to('/event-well-done');
 
     }
 }
