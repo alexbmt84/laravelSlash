@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tache;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller {
 
     public function index() {
+
         return view('users.profile');
     }
 
@@ -46,7 +48,7 @@ class ProfileController extends Controller {
       $user->save();
 
     return redirect()->back()->with('success', 'Informations updated successfully.');
-    
+
     }
 
 }
