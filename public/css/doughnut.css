@@ -539,8 +539,8 @@ h3 {
 
   .eventGrid {
     width: 100%;
-    height: 340px;
-    margin: 20px 0 50px 0;
+    height: 100%;
+    margin: 20px 0 0px 0;
     display : flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -556,7 +556,7 @@ h3 {
     align-items: center;
     min-width: 160px;
     width: 168px;
-    height: 385px;
+    height: 405px;
     border-radius: 10px;
     color: white;
     font-size: 1.5em;
@@ -621,15 +621,16 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
-    min-height: 120px;
+    width: 100px;
+    min-height: 100px;
     overflow: hidden;
     margin: 8px 0;
   }
 
   .img-tache {
-    width: 100%;
+    width: 95%;
       border-radius: 20px;
+      margin-top: 15px;
   }
 
   .etat {

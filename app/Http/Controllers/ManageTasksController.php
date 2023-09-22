@@ -46,17 +46,17 @@ class ManageTasksController extends Controller
         if ($tache->etat == 0) {
 
             $tache->started_at = now();
+            $tache->paused_at = null;
+            $tache->ended_at = null;
 
         }
 
         $tache->etat = 1;
-
         $tache->save();
 
         return redirect()->back();
 
     }
-
 
     public function pause($id) {
 
@@ -67,12 +67,33 @@ class ManageTasksController extends Controller
             $duration = now()->diffInSeconds($tache->started_at);
 
             $tache->total_time += $duration;
-            $tache->started_at = null;
 
         }
 
-        $tache->etat = 0;
         $tache->paused_at = now();
+        $tache->ended_at = null;
+        $tache->started_at = null;
+
+        $tache->etat = 0;
+        $tache->save();
+
+        return redirect()->back();
+
+    }
+
+    public function end($id) {
+
+        $tache = Tache::find($id);
+
+        $duration = now()->diffInSeconds($tache->started_at);
+
+        $tache->total_time += $duration;
+
+        $tache->ended_at = now();
+        $tache->paused_at = null;
+        $tache->started_at = null;
+
+        $tache->etat = 0;
         $tache->save();
 
         return redirect()->back();

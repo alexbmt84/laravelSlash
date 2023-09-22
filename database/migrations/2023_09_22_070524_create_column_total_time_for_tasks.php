@@ -14,7 +14,7 @@ class CreateColumnTotalTimeForTasks extends Migration
     public function up()
     {
         Schema::table('taches', function (Blueprint $table) {
-            $table->dateTime('total_time')->nullable();
+            $table->integer('total_time')->nullable();
         });
 
     }

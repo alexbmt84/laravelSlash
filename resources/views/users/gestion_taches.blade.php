@@ -60,6 +60,7 @@
                             </div>
 
                             <p class="text-tache">{{$tache->label}}</p>
+                            <p class="date-tache">Créée {{ $tache->timeCalendar()   }}</p>
 
                             <div class="cadreTache">
                                 <img class="img-tache" src="../{{$tache->image}}" alt="">
@@ -67,10 +68,19 @@
 
                             @if($tache->etat !== 0)
 
-                                <p class="date-tache">Status : Playing</p>
-                                <p class="date-tache">{{$tache->started_at}}</p>
+                                <p class="date-tache">Statut : En cours</p>
+
+                            @elseif($tache->ended_at)
+
+                                <p class="date-tache">Statut : Terminée</p>
+
+                            @else
+
+                                <p class="date-tache">Statut : En pause</p>
 
                             @endif
+
+                            <p class="date-tache">Temps : {{ $tache->getFormattedTime()  }} heures</p>
 
                             <div class="etat">
 

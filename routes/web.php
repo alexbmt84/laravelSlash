@@ -77,3 +77,4 @@ Route::get('/task-well-done', [AddTaskController::class, 'taskWellDone']);
 
 Route::post('/play/{id}', [ManageTasksController::class, 'play']);
 Route::post('/pause/{id}', [ManageTasksController::class, 'pause']);
+Route::post('/end/{id}', [ManageTasksController::class, 'end']);
