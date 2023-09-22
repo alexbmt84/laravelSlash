@@ -22,9 +22,13 @@ class PdfController extends Controller
     // function to generate PDF
     public function graphPdf()
     {
-        $pdf = PDF::loadView('graph');
+        $userId = auth()->id();
+
+        $metiers = Metier::query()->with('evenements')->where('user_id', $userId)->get();
+        $evenements = Evenement::query()->where('user_id', $userId)->get();
+
+        $pdf = PDF::loadView('graph', compact('metiers', 'evenements'));
         $pdf->setOption('enable-javascript', true);
-        $pdf->setOption('javascript-delay', 5000);
         $pdf->setOption('enable-smart-shrinking', true);
         $pdf->setOption('no-stop-slow-scripts', true);
 
