@@ -7,6 +7,7 @@ use App\Http\Controllers\AddTaskController;
 use App\Http\Controllers\CreationController;
 use App\Http\Controllers\ManageEventsController;
 use App\Http\Controllers\ManageTasksController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PlanificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportingController;
@@ -78,3 +79,6 @@ Route::get('/task-well-done', [AddTaskController::class, 'taskWellDone']);
 Route::post('/play/{id}', [ManageTasksController::class, 'play']);
 Route::post('/pause/{id}', [ManageTasksController::class, 'pause']);
 Route::post('/end/{id}', [ManageTasksController::class, 'end']);
+
+Route::get('graphs', [PdfController::class, 'graphs']);
+Route::get('graphs-pdf', [PdfController::class, 'graphPdf']);
