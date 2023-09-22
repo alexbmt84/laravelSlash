@@ -57,4 +57,26 @@ class ManageTasksController extends Controller
 
     }
 
+
+    public function pause($id) {
+
+        $tache = Tache::find($id);
+
+        if ($tache->etat == 1 && $tache->started_at) {
+
+            $duration = now()->diffInSeconds($tache->started_at);
+
+            $tache->total_time += $duration;
+            $tache->started_at = null;
+
+        }
+
+        $tache->etat = 0;
+        $tache->paused_at = now();
+        $tache->save();
+
+        return redirect()->back();
+
+    }
+
 }

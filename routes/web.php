@@ -76,3 +76,4 @@ Route::get('/event-well-done', [AddEventController::class, 'eventWellDone']);
 Route::get('/task-well-done', [AddTaskController::class, 'taskWellDone']);
 
 Route::post('/play/{id}', [ManageTasksController::class, 'play']);
+Route::post('/pause/{id}', [ManageTasksController::class, 'pause']);
