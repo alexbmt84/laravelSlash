@@ -24,7 +24,10 @@
 
                 <div class="hevent">
                     <h3>Ma liste de projets</h3>
-                    <a class="btnTasks" href="/gestion_taches">Toutes mes tâches</a>
+                    <div class="buttons">
+                        <a class="btnTasks" href="/gestion_taches">Toutes mes tâches</a>
+                        <a class="btnTasks" href="/graphs-pdf">Génerer PDF</a>
+                    </div>
                 </div>
 
                 @foreach($metiers as $metier)
