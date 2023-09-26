@@ -23,14 +23,12 @@
                 <h1>Planification</h1>
 
                 <section class="chart" id="chartContainer">
-
                     <figure class="chart__figure" id="chart__figure">
                         <canvas class="chart__canvas rouge" id="chartCanvas" width="160" height="160" aria-label="doughnutChart" role="img"></canvas>
                         <figcaption class="chart__caption">
                             Excellent ! <span>Vous êtes sur la bonne voie !</span>
                         </figcaption>
                     </figure>
-
                 </section>
 
                 @if($evenement)
