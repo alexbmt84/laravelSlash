@@ -11,6 +11,7 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="../css/doughnut.css">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" defer></script><script  src="../js/doughnut.js" defer></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         </head>
 
         <body>
@@ -84,26 +85,26 @@
 
                             <div class="etat">
 
-                                <form action="/play/{{ $tache->id }}" method="POST">
-                                    @csrf
-                                    <button class="stateBtn" type="submit">
-                                        <i class="fa-regular fa-circle-play"></i>
-                                    </button>
-                                </form>
 
-                                <form action="/pause/{{ $tache->id }}" method="POST">
-                                    @csrf
-                                    <button class="stateBtn" type="submit">
-                                        <i class="fa-regular fa-circle-pause"></i>
-                                    </button>
-                                </form>
+                                <button class="stateBtn" data-action="play" data-id="{{ $tache->id }}">
 
-                                <form action="/end/{{ $tache->id }}" method="POST">
-                                    @csrf
-                                    <button class="stateBtn" type="submit">
-                                        <i class="fa-regular fa-circle-stop"></i>
-                                    </button>
-                                </form>
+                                    <i class="fa-regular fa-circle-play"></i>
+
+                                </button>
+
+
+                                <button class="stateBtn" data-action="pause" data-id="{{ $tache->id }}">
+
+                                    <i class="fa-regular fa-circle-pause"></i>
+
+                                </button>
+
+
+                                <button class="stateBtn" data-action="end" data-id="{{ $tache->id }}">
+
+                                    <i class="fa-regular fa-circle-stop"></i>
+
+                                </button>
 
                             </div>
 
@@ -116,6 +117,40 @@
                 @include("includes.footer")
 
             </main>
+
+        <script>
+
+            $(document).ready(function() {
+
+                $('.stateBtn').on('click', function(e) {
+
+                    e.preventDefault();
+
+                    const action = $(this).data('action');
+                    const taskId = $(this).data('id');
+
+                    $.ajax({
+
+                        url: `/${action}/${taskId}`,
+                        method: 'POST',
+                        data: { _token: '{{ csrf_token() }}' },
+
+                        success: function(response) {
+                            location.reload();
+                        },
+
+                        error: function(error) {
+                            console.log(error);
+                            alert('Une erreur est survenue.');
+                        }
+
+                    });
+
+                });
+
+            });
+
+        </script>
 
         </body>
 

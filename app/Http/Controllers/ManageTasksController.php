@@ -54,7 +54,7 @@ class ManageTasksController extends Controller
         $tache->etat = 1;
         $tache->save();
 
-        return redirect()->back();
+        return response()->json(['status' => 'success']);
 
     }
 
@@ -77,7 +77,7 @@ class ManageTasksController extends Controller
         $tache->etat = 0;
         $tache->save();
 
-        return redirect()->back();
+        return response()->json(['status' => 'success']);
 
     }
 
@@ -96,7 +96,7 @@ class ManageTasksController extends Controller
         $tache->etat = 0;
         $tache->save();
 
-        return redirect()->back();
+        return response()->json(['status' => 'success']);
 
     }
 

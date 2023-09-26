@@ -11,6 +11,7 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\PlanificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportingController;
+use App\Http\Controllers\TimerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SessionsController;
