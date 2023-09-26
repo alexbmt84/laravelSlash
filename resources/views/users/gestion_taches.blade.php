@@ -150,6 +150,8 @@
 
         </script>
 
+            <script src="../js/timer.js"></script>
+
         </body>
 
     </html>
