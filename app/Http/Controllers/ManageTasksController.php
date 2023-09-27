@@ -6,6 +6,8 @@ use App\Models\Evenement;
 use App\Models\Metier;
 use App\Models\Tache;
 use Illuminate\Http\Request;
+use Ratchet\App;
+use App\Events\RealTimeMessage as RealTimeMessage;
 
 class ManageTasksController extends Controller
 {
@@ -16,6 +18,21 @@ class ManageTasksController extends Controller
         $taches = Tache::query()->with('evenement.metier')->where('user_id', $user_id)->get();
 
         $evenement = [];
+
+        return view('users.gestion_taches', compact('taches', 'evenement'));
+
+    }
+
+    public function socket() {
+
+        $user_id = auth()->id();
+
+        $taches = Tache::query()->with('evenement.metier')->where('user_id', $user_id)->get();
+
+        $evenement = [];
+
+        event(new RealTimeMessage('Hello World! I am an event 😄'));
+
 
         return view('users.gestion_taches', compact('taches', 'evenement'));
 

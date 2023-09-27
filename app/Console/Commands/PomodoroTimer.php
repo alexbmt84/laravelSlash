@@ -35,31 +35,30 @@ class PomodoroTimer extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
+
     public function handle()
     {
         Log::info("Pomodoro Timer execution !");
         $this->info('pomodoro:timer command is working fine!');
 
-        $userId = auth()->id();
-
-        $taches = Tache::query()->where('user_id', $userId)->get();
+        $taches = Tache::all();
 
         foreach ($taches as $tache) {
 
-            if($tache->etat == 1 && $tache->started_at) {
+            if ($tache->etat == 1 && $tache->started_at) {
 
                 $duration = now()->diffInSeconds($tache->started_at);
 
                 $tache->total_time += $duration;
+
                 $tache->paused_at = now();
                 $tache->ended_at = null;
                 $tache->started_at = null;
-                $tache->etat = 0;
 
+                $tache->etat = 0;
                 $tache->save();
+
             }
 
         }

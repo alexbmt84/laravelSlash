@@ -83,3 +83,5 @@ Route::post('/end/{id}', [ManageTasksController::class, 'end']);
 
 Route::get('graphs', [PdfController::class, 'graphs']);
 Route::get('graphs-pdf', [PdfController::class, 'graphPdf']);
+
+Route::get('socket', [ManageTasksController::class, 'socket']);
